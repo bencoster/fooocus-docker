@@ -32,12 +32,31 @@ to launch it on RunPod.
 To install CUDA and cuDNN in Ubuntu 23.10, follow these steps in your terminal:
 
 Update the package list:
-sudo apt update
+**sudo apt update**
 
 Install the NVIDIA CUDA Deep Neural Network library (cuDNN) and the CUDA toolkit:
-sudo apt install nvidia-cudnn nvidia-cuda-toolkit
+**sudo apt install nvidia-cudnn nvidia-cuda-toolkit**
 
 cuDNN provides highly tuned implementations for standard routines used in deep neural networks, such as forward and backward convolution, pooling, normalization, and activation layers. It’s an essential component for GPU-accelerated deep learning tasks.
+
+**To test if the CUDA Toolkit** 
+is properly installed on a Linux system, you can follow these steps. These steps assume that you have already installed the CUDA Toolkit and want to verify its installation.
+
+1. Verify CUDA Installation
+First, check if the nvcc (NVIDIA CUDA Compiler) command is available and verify its version to confirm that CUDA has been installed.
+**nvcc --version**
+
+This command should output the version of CUDA Toolkit installed, for example:
+    nvcc: NVIDIA (R) Cuda compiler driver
+    Copyright (c) 2022 NVIDIA Corporation
+    Built on Thu_May_19_15:13:54_PDT_2022
+    Cuda compilation tools, release 11.7, V11.7.99
+    Build cuda_11.7.TC445_19.30171240_0
+
+2. Check NVIDIA Driver
+Ensure that the NVIDIA driver is correctly installed and loaded. You can use the nvidia-smi command to check this.
+**nvidia-smi**
+This command provides information about the GPU properties and the currently installed NVIDIA driver version.
 
 
 ### Start the Docker container
